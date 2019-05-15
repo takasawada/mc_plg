@@ -54,11 +54,12 @@ public class McPlgUuidMan{
     // 表示メソッド(uuid指定)
     public void print(String uuid)
     {
-	if(get(uuid) == null){
+	Boolean bo = get(uuid);
+	if(null == bo){
 	    System.out.println("値[" + uuid + "]:" + "見つかりません");
 	}
 	else{
-	    System.out.println("値[" + uuid + "]:" + get(uuid));
+	    System.out.println("値[" + uuid + "]:" + bo);
 	}
     }
 
