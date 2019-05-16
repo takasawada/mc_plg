@@ -13,17 +13,26 @@ import java.util.HashMap;
 //////////////////////////////////////////////////////////////////
 public class McPlgUuidMan{
     //////////////////////////////////////////////////////////////////
-    // HashMap インスタンスを利用した管理テーブル (private)
+    // private
     //////////////////////////////////////////////////////////////////
+
+    // HashMap インスタンスを利用した管理テーブル
     private HashMap<String, Boolean> _hashmap;
-    
+
+    // このクラスに唯一のインスタンス
+    private static McPlgUuidMan instance = new McPlgUuidMan();
+
+    // private コンストラクタ(初期化)
+    private McPlgUuidMan(){
+	_hashmap = new HashMap<String, Boolean>();
+    }
+
     //////////////////////////////////////////////////////////////////
     // 以下本クラスで提供するメソッド (public)
     //////////////////////////////////////////////////////////////////
-    // コンストラクタ(初期化) new McPlgUuidMan()時に呼ばれる
-    public McPlgUuidMan() 
-    {
-	_hashmap = new HashMap<String, Boolean>();	
+    // インスタンス取得メソッド
+    public static McPlgUuidMan getInstance() {
+	return instance;
     }
 
     // 登録/変更メソッド

@@ -3,8 +3,8 @@
 ////////////////////////////////////////////////////////////////////////
 public class Main{
     public static void main(String[] args){
-	// 自作クラスMcPlgUuidManのインスタンス作成
-	McPlgUuidMan mcUuid = new McPlgUuidMan(); 
+	// 自作クラスMcPlgUuidManのインスタンス獲得
+	McPlgUuidMan mcUuid = McPlgUuidMan.getInstance();
 
 	// putメソッドで登録
         mcUuid.put("12345678-5930-0873-b064-49c40d70da88", true); 
