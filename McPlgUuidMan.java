@@ -36,33 +36,28 @@ public class McPlgUuidMan{
     }
 
     // 登録/変更メソッド
-    public void put(String uuid, Boolean bo)
-    {
+    public void put(String uuid, Boolean bo){
 	// HashMapクラスのputメソッドはuuidが存在しなれば追加/存在すれば変更となる
 	_hashmap.put(uuid,bo);
     }
 
     // 削除メソッド (uuid指定)
-    public void remove(String uuid)
-    {
+    public void remove(String uuid){
 	_hashmap.remove(uuid);
     }
 
     // 全削除メソッド
-    public void clear()
-    {
+    public void clear(){
 	_hashmap.clear();
     }
 
     // 参照メソッド (uuid をキーにbooleanを返却)
-    public Boolean get(String uuid)
-    {
+    public Boolean get(String uuid){
 	return _hashmap.get(uuid);	
     }
 
     // 表示メソッド(uuid指定)
-    public void print(String uuid)
-    {
+    public void print(String uuid){
 	Boolean bo = get(uuid);
 	if(null == bo){
 	    System.out.println("値[" + uuid + "]:" + "見つかりません");
@@ -73,8 +68,7 @@ public class McPlgUuidMan{
     }
 
     // 表示メソッド(ALL)
-    public void printAll()
-    {
+    public void printAll(){
 	System.out.println("ALL UUID List");
 	for (String key : _hashmap.keySet()) {
 	    System.out.println("\t[" + key + "]:" + get(key));
